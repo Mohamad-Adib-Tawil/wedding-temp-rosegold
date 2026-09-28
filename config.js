@@ -73,6 +73,7 @@ window.__INVITE__ = {
       "assets/gallery/4.jpg"
     ],
     "timezone": "Asia/Baghdad",
-    "youtubeVideoId": "Hp8WTVqR_0U"
+    "youtubeVideoId": "Hp8WTVqR_0U",
+    "siteUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-rosegold/"
   }
 };

@@ -67,12 +67,18 @@ function fillContent() {
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDescription = document.querySelector('meta[property="og:description"]');
   const ogUrl = document.querySelector('meta[property="og:url"]');
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  const twitterImage = document.querySelector('meta[name="twitter:image"]');
   const pageTitle = `دعوة زفاف ${[c.groom, c.bride].filter(Boolean).join(" & ")}`;
   const orderLink = document.getElementById("orderLink");
+  const siteUrl = c.siteUrl || location.href;
+  const heroImage = c.images && c.images.hero ? new URL(c.images.hero, siteUrl).href : "";
   if (metaDescription) metaDescription.content = description;
   if (ogTitle) ogTitle.content = pageTitle;
   if (ogDescription) ogDescription.content = description;
-  if (ogUrl) ogUrl.content = location.href;
+  if (ogUrl) ogUrl.content = siteUrl;
+  if (ogImage && heroImage) ogImage.content = heroImage;
+  if (twitterImage && heroImage) twitterImage.content = heroImage;
   if (orderLink) orderLink.href = c.orderUrl || c.whatsappUrl || "#";
   document.title = pageTitle;
 }
